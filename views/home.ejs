@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <%- include('./partials/head')%>    
+        <title>Music box</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        
+    </head>
+    <body>
+        <%- include('./partials/header')%>
+        <main>
+            <div id="slideshow-principal">
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <div id="slideshow">
+                    <img class= "car" src="" alt="" id="img1" width="100%">
+                    <img class= "car" src="" alt="" id="img2" width="100%">
+                </div>
+                <div id="indicadores">
+
+                </div>
+            </div>
+            <div class="benefits">
+                <p><i class="fas fa-award"></i> Garantía Oficial</p>
+                <p><i class="fas fa-truck"></i> Envío gratis desde $10.000</p>
+                <p><i class="far fa-credit-card"></i> 3, 6 y 12 cuotas sin interés</p>
+                
+            </div>
+            <div class="categorias">
+                <div class="button">
+                    <a href="/products">
+                        <i class="fas fa-th-list"></i>
+                        <p>Todos los productos</p>
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="/products/cuerdas">
+                        <i class="fas fa-guitar"></i>
+                        <p>Cuerdas</p>
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="/products/viento">
+                        <i class="fas fa-wind"></i>
+                        <p>Viento</p>
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="products/percusion">
+                        <i class="fas fa-drum"></i>
+                        <p>Percusión</p>
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="/products/sonido">
+                        <i class="fas fa-headphones-alt"></i>
+                        <p>Sonido</p>
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="/products/accesorios">
+                        <i class="fas fa-microphone-alt"></i>
+                        <p>Accesorios</p>
+                    </a>
+                </div>
+                <div class="button">
+                    <a href="#">
+                        <i class="fas fa-sliders-h"></i>
+                        <p>Taller</p>
+                    </a>
+                </div>
+            </div>
+            <section>
+                <h2 class="destacados">Productos Destacados</h2>
+                <section >
+                    
+                        <div class="productos">
+                    <% products.forEach(product => { %>
+                        <article class="listaDeProductos">
+                        
+                        <a href="/products/<%= product.id %>">
+                            
+                                <div class='producto'>
+                                    <img src="/images/products/<%= product.image %>" alt="imagen de <%= product.name %>" class="imagen-producto">
+                                    <div class="mainArticle">
+                                        <p class="name"><%= product.name %></p>
+                                        <p class="price">$ <%= product.price %></p>
+                                     </div>
+                                </div>
+                                
+                            
+                        </a>
+                        </article>
+                    
+                    <% }) %>
+                   </div>
+                </section>
+    
+            </section>
+        </main>
+        <%- include('./partials/footer')%>
+        
+        <script src="/javascript/carrusel.js"></script>
+    </body>
+
+
+</html>

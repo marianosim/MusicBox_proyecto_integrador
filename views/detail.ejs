@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head')%>
+    <title><%= products.name %></title>
+    <link rel="stylesheet" href="/css/product-detail.css">
+</head>
+<body>
+    <%- include('./partials/header')%>
+    <main>
+        <section>
+            <div class="product">
+                <div class="productImage">
+                    <img src="/images/products/<%= products.image %>" alt="<%= products.name %>">
+                </div>
+                <article class="main-description">
+                    <h2><%= products.name %></h2> 
+                    <p class="puntaje">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i> 10 calificaciones
+                    </p>
+                    <p>
+                        <ul class="shopping-options">
+                            <li><i class="fas fa-award"></i> Garantía Oficial</li>
+                            <li><i class="fas fa-truck"></i> Envío gratis desde $10.000</li>
+                            <li><i class="far fa-credit-card"></i> 3, 6 y 12 c/ sin interés</li>
+                        </ul>
+                        
+                    </p>
+                    <div class="div-line">
+
+                    </div>
+                    <div class="price-select">
+                        <p class="price">
+                            $ <%= products.price %>
+                        </p>
+                    </div>
+                    <div class="div-line">
+
+                    </div>
+                    <h3><%= products.description %></h3>
+                    <div class="add-cart">
+                        <form action="/carrito" method="GET">
+                            <button type="submit" class="add-cart-btn">Añadir al carrito <i class="fas fa-cart-plus"></i></button>
+                        </form>
+                        <% if (locals.isLogged && userLogged.category == 'admin') { %>
+                            <div class="edit-delete-btns">
+                                <form action="/products/edit/<%= products.id %>" method="GET" style="display: inline-flex">
+                            <button type="submit" class="action-button edit edit-btn">Editar Producto</button>
+                        </form>
+						<form action="/products/<%= products.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete delete-btn">Eliminar</button>
+						</form>
+                            </div>
+                        
+                        <% } %> 
+                    </div>
+                    <div class="div-line"></div>
+                </article>
+            </div>
+
+        </section>
+    </main>
+    <%- include('./partials/footer')%>
+    
+</body>
+</html>

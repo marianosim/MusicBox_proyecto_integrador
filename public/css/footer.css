@@ -1,0 +1,18 @@
+footer{
+    padding:30px 15px 15px 15px;
+    background-color:#1985a1;
+    margin-bottom: 0%;
+    bottom: 0%;
+}
+.list-inline{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 10%;
+}
+a i {
+    color: #dcdcdd;
+}
+.copyright {
+    color: #dcdcdd;
+}

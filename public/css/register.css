@@ -1,0 +1,128 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+h1{
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+
+
+body{
+    background-color: white;
+    font-family: 'Exo', sans-serif;
+}
+
+
+
+main{
+    width: 90%;
+    margin: auto;
+}
+
+.formulario{
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100); 
+    
+}
+
+
+
+.form{
+    
+    width: 50%;
+    margin-bottom: 15px;
+    
+}
+
+.form input{
+    width: 80%;
+}
+
+.caja{
+    padding: 10%;
+    background: white;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    
+    
+}
+div .text-danger{
+    color: red;
+}
+
+.terminos{
+    width: 100%;
+    
+}
+
+.hl{
+    padding-top: 20px;
+}
+
+.form label{
+    
+    display: block;
+}
+
+button{
+    
+    color:white;
+    background-color: black;
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+button:active{
+    background-color: #1985a1;
+}
+
+.barra{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: solid 1px black;
+    padding: 5px;
+    text-align: center;
+    
+}
+#formFooter {
+    background-color: #f6f6f6;
+    padding: 25px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+  }
+
+.show {
+      display: block;
+      text-align: center;
+      font-weight: 800;
+}
+.errorMsg{
+    color: red;
+    font-size: 16px;
+}
+.hidden{
+    display: none;
+}
+

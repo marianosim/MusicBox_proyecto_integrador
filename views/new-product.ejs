@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <%- include('./partials/head')%>
+    <title>Crear producto</title>
+    <link rel="stylesheet" href="/css/new-product.css">
+</head>
+<body>
+    <%- include('./partials/header')%>
+    <main>
+        <form action="/products/" id="form" class='caja' method="POST" enctype="multipart/form-data">
+            <div class="new-product-form">
+                <h2>Creá tu producto</h2>
+                <form>
+                <div>
+                    <ul id="errores"></ul>
+                </div>
+                <div>
+                    <label>Título del producto</label>
+                    <input type="text" id="nombre" name="titulo" placeholder="Producto" value="<%= locals.oldData ? oldData.titulo : null %>">
+                    <% if (locals.errors&&errors.titulo) {%>
+                        <div class="text-danger">
+                          <%= errors.titulo.msg %> 
+                        </div>
+                      <% }%>  
+                </div>
+                <div>
+                    <label for="descripcion"> Descripcion</label>
+                    <textarea name="descripcion" id="descripcion" cols="30" placeholder="Describe el producto"><%= locals.oldData ? oldData.descripcion : null %></textarea>
+                    <% if (locals.errors&&errors.descripcion) {%>
+                        <div class="text-danger">
+                          <%= errors.descripcion.msg %> 
+                        </div>
+                      <% }%>  
+                </div>
+                <div>
+                    <label>Imagen de producto</label>
+                    <input type="file" name="productImage" id="productImage" accept=".jpg, .png, .jpeg" >
+                    <% if (locals.errors&&errors.productImage) {%>
+                        <div class="text-danger">
+                          <%= errors.productImage.msg %> 
+                        </div>
+                      <% }%>  
+                </div>
+                <div>
+                    <label>Categoría</label>
+                    <select name="categoria" id="">
+                        <% for( let i = 0; i < categorias.length; i++ ) { %>
+                            <option value='<%= categorias[i].id %>'>
+                                <%= categorias[i].name%> 
+                            </option>
+                        <% } %>
+                        
+                    </select>
+                </div>
+                <div>
+                <label>Color:</label>
+                <select name="color" id="">
+                    <% for( let i = 0; i < colors.length; i++ ) { %>
+                        <option value='<%= colors[i].id %>'>
+                            <%= colors[i].name%> 
+                        </option>
+                    <% } %>
+                    
+                </select>
+                    
+                </div>
+                <div>
+                    <label for="precio">Precio: </label>
+                    <input type="text"  name="precio" placeholder="Precio" value="<%= locals.oldData ? oldData.precio : null %>">
+                </div>
+                
+
+            </div>
+            <button id=boton type="submit">Crear</button>
+            <button id=boton type="reset">Borrar</button>
+            
+        </form>
+    </main>
+    <%- include('./partials/footer')%>
+    <script src="/javascript/products.js"></script>
+</body>
+</html>

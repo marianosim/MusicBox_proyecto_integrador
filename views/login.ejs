@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <%- include('./partials/head')%>
+        <title>Music box</title>
+        <link rel="stylesheet" href="/css/register.css">
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+    <body>
+        <%- include('./partials/header')%>
+        <main>
+         
+            <form action="/users/login" class="caja" id="formulario" method="POST">
+                <div class="formulario"> 
+                    <div id="formContent">
+                      <h2 class="active"> Inicia sesión </h2>
+                      <a id="inactive" href="register">Registrate</a>
+                  
+                      <div id="logoLogin">
+                        <a href="/"><img src="/images/Logo Music Box.png" alt="Logo de Music Box"></a>
+                      </div>
+        
+                      
+                        <input type="email" id="email"  name="email" placeholder="Correo Electrónico" value="<%= locals.oldData ? oldData.email : null %>">
+                        <div id="errorEmail" class="errorMsg hidden"></div>
+                        <% if (locals.errors&&errors.email) {%>
+                          <div class="text-danger">
+                            <%= errors.email.msg %> 
+                          </div>
+                        <% }%>  
+                        <input type="password" class="password" id="password"  name="password" placeholder="Contraseña">
+                        <div id="errorPassword" class="errorMsg hidden"></div>
+                        <% if (locals.errors&&errors.password) {%>
+                          <div class="text-danger">
+                            <%= errors.password.msg %> 
+                          </div>
+                        <% } %> <br>
+                        <label for=""><input type="checkbox" name="rememberMe" class="rememberMe"> Recordar usuario</label>
+                        
+                        <input type="submit" value="Inicia Sesión">
+   
+                
+                      <div id="formFooter">
+                        <a class="underlineHover" href="#">Olvidaste tu contraseña?</a>
+                      </div>
+                  
+                    </div>
+                  </div>
+               
+            </form>
+        </main>
+        <%- include('./partials/footer')%>
+        <script src="/javascript/login.js"></script>
+    </body>
+</html>
